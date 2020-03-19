@@ -29,7 +29,10 @@ public class Vehicle {
 
         System.out.println("Remaining fuel: " + fuelLevel);
         System.out.println();
-        return traveledDistance;
-
+        return traveledDistance;}
+    public void decelarate()
+    //TODO: implement this
+    {
+        System.out.println("This is just a demo method");
     }
 }
