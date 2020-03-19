@@ -7,11 +7,13 @@ public class App
         System.out.println();
         System.out.println( "Welcome to the racing game ");
         System.out.println();
+
         Car carReference = new Car();
         carReference.name = "Audi";
         carReference.colour = "red";
         carReference.maxSpeed = 260;
         carReference.mileage = 6.2;
+        carReference.fuelLevel = 100;
 
 //        carReference.engine = new Engine();
 //        carReference.engine.manufacturer = "VW";
@@ -22,7 +24,8 @@ public class App
         engine1.capacity = 2000;
 
         carReference.engine = engine1;
-
+        double currentDistance = carReference.accelerate(60, 1);
+        System.out.println("Current distance: " + currentDistance);
         //One object with two references
 
         System.out.println();
