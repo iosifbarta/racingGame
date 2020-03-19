@@ -13,6 +13,20 @@ public class Vehicle {
 
 
     public double accelerate (double speed, double durationInHours) {
+        if (fuelLevel <= 0){
+            System.out.println("Not enough fuel!!!");
+            return 0;
+        }
+
+        if (speed > maxSpeed) {
+            System.out.println("Maxs peed excedeed!!!");
+            return 0; }
+        else if (speed == maxSpeed){
+            System.out.println("Be carefull max speed achieved!!"); }
+        else {
+            System.out.println("Valid speed entered!");
+        }
+//TODO use more fuel if speed > 120
         System.out.println();
         System.out.println(name + " is accelarating with " + speed + " km/h for " + durationInHours + " h" );
         //local variable
