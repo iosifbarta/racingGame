@@ -1,17 +1,6 @@
 package org.fasttrackit;
 
-public class Car {
+public class Car extends Autovehicle {
 
-    //instance variables
-    int racingNumber;
-    String name;
-    int maxSpeed;
-    double mileage;
-    String colour;
-    double fuelLevel;
-    boolean damaged;
-// "has-a" relationship - Aggregacion
-    Engine engine;
-
-
+    int doorCount;
 }
