@@ -14,6 +14,7 @@ public class App
         carReference.maxSpeed = 260;
         carReference.mileage = 6.2;
         carReference.fuelLevel = 100;
+        carReference.damaged = true;
 
 //        carReference.engine = new Engine();
 //        carReference.engine.manufacturer = "VW";
@@ -26,6 +27,10 @@ public class App
         carReference.engine = engine1;
         double currentDistance = carReference.accelerate(60, 1);
         System.out.println("Current distance: " + currentDistance);
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
+        System.out.println("Is car damaged " + carReference.damaged);
+
         //One object with two references
 
         System.out.println();
@@ -52,14 +57,14 @@ public class App
         System.out.println("Damaged: " + carReference.damaged);
         System.out.println();
 
-        Car car2 = new Car();
-        car2.name = "Lamboughini";
-        car2.damaged = true;
-        car2.colour = "Blue";
+//        Car car2 = new Car();
+//        car2.name = "Lamboughini";
+//        car2.damaged = true;
+//        car2.colour = "Blue";
 
-        System.out.println("Proprieties of: " + car2.name);
-        System.out.println("Colour of car: " + car2.colour);
-        System.out.println("Damaged: " + car2.damaged);
+//        System.out.println("Proprieties of: " + car2.name);
+//        System.out.println("Colour of car: " + car2.colour);
+//        System.out.println("Damaged: " + car2.damaged);
 
         //modulo modulus operator
 //        System.out.println(4 % 2);
