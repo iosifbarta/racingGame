@@ -34,9 +34,10 @@ public class App
         carReference.engine = engine1;
         double currentDistance = carReference.accelerate(60, 1);
         System.out.println("Current distance: " + currentDistance);
+        //added mechanic
         Mechanic mechanic = new Mechanic();
         mechanic.repair(carReference);
-        System.out.println("Is car damaged " + carReference.damaged);
+        System.out.println("Is car damaged? " + carReference.damaged);
 
         //One object with two references
 
