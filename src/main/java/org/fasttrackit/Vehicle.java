@@ -1,6 +1,13 @@
 package org.fasttrackit;
 
 public class Vehicle {
+// static variable, class variable
+    static int totalVehicleCount;
+
+    public Vehicle(){
+        totalVehicleCount++;
+    }
+
     //instance variables
     int racingNumber;
     String name;
