@@ -14,8 +14,8 @@ public class App {
 //        vehicle2.totalVehicleCount = 2;
 //        Vehicle.totalVehicleCount =50;
 
-        System.out.println("Total count from vehicle1: " + vehicle1.totalVehicleCount);
-        System.out.println("Total count from vehicle2: " + vehicle2.totalVehicleCount);
+//        System.out.println("Total count from vehicle1: " + vehicle1.totalVehicleCount);
+//        System.out.println("Total count from vehicle2: " + vehicle2.totalVehicleCount);
         System.out.println("Total count from Vehicle: " + Vehicle.totalVehicleCount);
 
 //        System.out.println("Please enter vehicle name: ");
@@ -27,31 +27,31 @@ public class App {
 //        System.out.println( "Welcome to the racing game ");
 //        System.out.println();
 //
-//        Engine engine1 = new Engine();
-//        engine1.manufacturer = "VW";
-//        engine1.capacity = 2000;
-//
-//        Car carReference = new Car(engine1);
-//        carReference.name = "Audi";
-//        carReference.colour = "red";
-//        carReference.maxSpeed = 260;
-//        carReference.mileage = 6.2;
-//        carReference.fuelLevel = 100;
-//        carReference.damaged = true;
-//
-////        carReference.engine = new Engine();
-////        carReference.engine.manufacturer = "VW";
-////        carReference.engine.capacity = 2000;
-//
-//
-//
-//        double currentDistance = carReference.accelerate(60, 1);
-//        System.out.println("Current distance: " + currentDistance);
-//        //added mechanic
-//        Mechanic mechanic = new Mechanic();
-//        mechanic.repair(carReference);
-//        System.out.println("Is car damaged? " + carReference.damaged);
-//
+        Engine engine1 = new Engine();
+        engine1.manufacturer = "VW";
+        engine1.capacity = 2000;
+
+        Car carReference = new Car(engine1);
+        carReference.setName("Audi");
+        carReference.setColour("Red");
+        carReference.setMaxSpeed(260);
+        carReference.setMileage(6.2);
+        carReference.setFuelLevel(100);
+        carReference.setDamaged(true);
+
+        carReference.engine = new Engine();
+        carReference.engine.manufacturer = "VW";
+        carReference.engine.capacity = 2000;
+
+
+
+        double currentDistance = carReference.accelerate(60, 1);
+        System.out.println("Current distance: " + currentDistance);
+        //added mechanic
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
+        System.out.println("Is car damaged? " + carReference.isDamaged());
+
 //        //One object with two references
 //
 //        System.out.println();
@@ -69,9 +69,9 @@ public class App {
 //        System.out.println();
 //
 //        //concatanation
-//        System.out.println("Properties of " + carReference.name);
-//        System.out.println("Colour of car: " + carReference.colour);
-//        System.out.println("Maximum speed:  " + carReference.maxSpeed + " km/h");
+        System.out.println("Properties of " + carReference.getName());
+        System.out.println("Colour of car: " + carReference.getColour());
+        System.out.println("Maximum speed:  " + carReference.getMaxSpeed() + " km/h");
 //        System.out.println("Mileage: " + carReference.mileage + " l/100 km");
 //        System.out.println("Fuel level: " + carReference.fuelLevel);
 //        System.out.println("Racing Number: " + carReference.racingNumber);
