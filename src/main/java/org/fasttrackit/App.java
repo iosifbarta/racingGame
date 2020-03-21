@@ -16,7 +16,7 @@ public class App {
 
 //        System.out.println("Total count from vehicle1: " + vehicle1.totalVehicleCount);
 //        System.out.println("Total count from vehicle2: " + vehicle2.totalVehicleCount);
-        System.out.println("Total count from Vehicle: " + Vehicle.totalVehicleCount);
+        System.out.println("Total count from Vehicle: " + Vehicle.getTotalVehicleCount());
 
 //        System.out.println("Please enter vehicle name: ");
 //        Scanner scanner = new Scanner(System.in);
