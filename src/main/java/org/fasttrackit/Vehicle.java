@@ -18,7 +18,11 @@ public class Vehicle {
     private double totalDistance;
     private boolean damaged;
 
+    public double accelerate (double speed){
+        return  accelerate(speed, 1);
+    }
 
+//method overloading
     public double accelerate (double speed, double durationInHours) {
         if (fuelLevel <= 0){
             System.out.println("Not enough fuel!!!");
