@@ -2,10 +2,8 @@ package org.fasttrackit;
 
 public class Vehicle {
 // static variable, class variable
-    private static int totalVehicleCount;
-
-    public Vehicle(){
-        totalVehicleCount++;
+    private static int totalVehicleCount(){
+        return  totalVehicleCount();
     }
 
     //instance variables
@@ -28,7 +26,6 @@ public class Vehicle {
             System.out.println("Not enough fuel!!!");
             return 0;
         }
-
         if (speed > maxSpeed) {
             System.out.println("Maxs peed excedeed!!!");
             return 0; }
@@ -131,7 +128,19 @@ public class Vehicle {
         this.damaged = damaged;
     }
 //read-only proprieties
-    public static int getTotalVehicleCount() {
-        return totalVehicleCount;
+
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "racingNumber=" + racingNumber +
+                ", name='" + name + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", mileage=" + mileage +
+                ", colour='" + colour + '\'' +
+                ", fuelLevel=" + fuelLevel +
+                ", totalDistance=" + totalDistance +
+                ", damaged=" + damaged +
+                '}';
     }
 }
