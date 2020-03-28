@@ -63,6 +63,10 @@ public class Vehicle {
     {
         System.out.println("This is just a demo method");
     }
+    //co-variant return type
+    protected Vehicle clone(){
+        return new Vehicle();
+    }
 
     public int getRacingNumber() {
         return racingNumber;
