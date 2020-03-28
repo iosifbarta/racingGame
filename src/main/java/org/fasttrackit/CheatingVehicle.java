@@ -12,11 +12,11 @@ public class CheatingVehicle extends Vehicle {
         System.out.println("Cheater!!");
         return distance;
     }
-    public void fly(){
-        System.out.println("Flying");
-    }
     //access can be more permissive than in super-class
     public CheatingVehicle clone(){
         return new CheatingVehicle();
+    }
+    public void fly() {
+        System.out.println("Flying");
     }
 }
