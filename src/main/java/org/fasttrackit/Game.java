@@ -39,10 +39,10 @@ public class Game {
         }
     }
     private Track getSelectedTrackFromUser(){
-        System.out.println("Please select a track");
+        System.out.println("Please select a track.");
         Scanner scanner = new Scanner(System.in);
         int trackNumber = scanner.nextInt();
-        return tracks[trackNumber-1];
+        return tracks[trackNumber - 1];
     }
 
     private String getVehicleNameFromUser(){
