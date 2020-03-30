@@ -10,7 +10,9 @@ public class Game {
 
     private Track[] tracks = new Track[3];
     private List <Vehicle> competitors = new ArrayList<>();
-
+    private Track selectedTrack;
+    private boolean winnerNotKnow = true;
+    private int competitorsWithoutFuel = 0;
 
     public void start(){
         System.out.println("Welcome!");
@@ -18,12 +20,14 @@ public class Game {
         initializeTracks();
         displayTracks();
 
-        Track selectedTrack = getSelectedTrackFromUser();
+        selectedTrack = getSelectedTrackFromUser();
         System.out.println("Selected track: " + selectedTrack.getName());
 
         initializeCompetitors();
 
+        while (winnerNotKnow && competitorsWithoutFuel < competitors.size()){
         playOneRound();
+        }
     }
     private void playOneRound(){
         System.out.println("New round");
@@ -32,6 +36,14 @@ public class Game {
             double speed = getAccelerationSpeedFromUser();
 
             vehicle.accelerate(speed);
+
+            if(selectedTrack.getLength() <= vehicle.getTotalDistance()){
+                System.out.println("Tha winner is: " + vehicle.getName());
+                winnerNotKnow = false;
+
+                break;
+            }
+
         }
 
     }
