@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -13,9 +14,10 @@ public class Game {
 
     public void start(){
         System.out.println("Welcome!");
+
         initializeTracks();
         displayTracks();
-        getSelectedTrackFromUser();
+
         Track selectedTrack = getSelectedTrackFromUser();
         System.out.println("Selected track: " + selectedTrack.getName());
 
@@ -27,7 +29,9 @@ public class Game {
         System.out.println("New round");
         // enhanced for (for - each)
         for (Vehicle vehicle : competitors){
-            vehicle.accelerate(100);
+            double speed = getAccelerationSpeedFromUser();
+
+            vehicle.accelerate(speed);
         }
 
     }
@@ -70,9 +74,19 @@ public class Game {
     }
     private Track getSelectedTrackFromUser(){
         System.out.println("Please select a track.");
+
+        try {
+
         Scanner scanner = new Scanner(System.in);
         int trackNumber = scanner.nextInt();
         return tracks[trackNumber - 1];
+        }catch (InputMismatchException e){
+            throw new RuntimeException("Please enter a number.");
+        }catch (ArrayIndexOutOfBoundsException e){
+            throw new RuntimeException("Wrong number entered.");
+        }finally {
+            System.out.println("Finally block always executed");
+        }
     }
 
     private String getVehicleNameFromUser(){
@@ -84,6 +98,12 @@ public class Game {
         System.out.println("Please enter player numbers: ");
         Scanner scanner = new Scanner(System.in);
         return  scanner.nextInt();
+    }
+
+    private double getAccelerationSpeedFromUser(){
+        System.out.println("Please enter acceleration speed: ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextDouble();
     }
 }
 
